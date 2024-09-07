@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Доступні кімнати</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Назва кімнати</th>
+            <th>Опис</th>
+            <th>Ціна за ніч</th>
+            <th>Вмістимість</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for room in rooms %}
+        <tr>
+            <td>{{ room.name }}</td>
+            <td>{{ room.description }}</td>
+            <td>{{ room.price_per_night }}</td>
+            <td>{{ room.capacity }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
